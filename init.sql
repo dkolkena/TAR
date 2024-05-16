@@ -8,7 +8,6 @@ as well as its general Wikipedia page (https://en.wikipedia.org/wiki/The_Amazing
 
 Author: Daniel Kolkena
 */
-
 /* Create the database */
 CREATE DATABASE IF NOT EXISTS tar;
 
@@ -16,10 +15,10 @@ CREATE DATABASE IF NOT EXISTS tar;
 USE tar;
 
 /* Drop existing tables */
-DROP TABLE IF EXISTS Seasons;
-DROP TABLE IF EXISTS Countries;
 DROP TABLE IF EXISTS Contestants;
 DROP TABLE IF EXISTS Legs;
+DROP TABLE IF EXISTS Seasons;
+DROP TABLE IF EXISTS Countries;
 
 /* Create the tables */
 CREATE TABLE Seasons (
@@ -44,20 +43,22 @@ CREATE TABLE Contestants (
     season int NOT NULL,
     languages varchar(255),
     details varchar(255),
-    FOREIGN KEY (season) REFERENCES Seasons(ID),
+    PRIMARY KEY (ID),
+    FOREIGN KEY (season) REFERENCES Seasons(ID)
 ); 
 
 CREATE TABLE Legs (
     ID int AUTO_INCREMENT,
     season int,
     SeasonEpisode int,
-    country varchar(255)
+    country varchar(255),
     FOREIGN KEY (season) REFERENCES Seasons(ID),
     FOREIGN KEY (country) REFERENCES Countries(country),
-    Challenge1,
-    Challenge2,
-    Challenge3,
-    elimination tinyint(1)
+    Challenge1 varchar(255),
+    Challenge2 varchar(255),
+    Challenge3 varchar(255),
+    elimination tinyint(1),
+    PRIMARY KEY (ID)
 ); 
 
 /*
@@ -185,7 +186,7 @@ INSERT INTO Countries (country, continent) VALUES
     ('Uruguay','South America');
 
 # Season 1
-INSERT INTO Contestants VALUES ('Robar', 'Matt', 'Simsbury, Connecticut', '28', '1', '', '');
-INSERT INTO Contestants VALUES ('Robar', 'Ana', 'Simsbury, Connecticut', '28', '1', '', '');
-INSERT INTO Contestants VALUES ('Smith', 'Kim', 'Baytown, Texas', '28', '1', '', '');
-INSERT INTO Contestants VALUES ('Kellner', 'Leslie', 'Baytown, Texas', '27', '1', '', '');
+INSERT INTO Contestants (lastname, firstname, hometown, age, season, languages, details) VALUES ('Robar', 'Matt', 'Simsbury, Connecticut', '28', '1', '', '');
+INSERT INTO Contestants (lastname, firstname, hometown, age, season, languages, details) VALUES ('Robar', 'Ana', 'Simsbury, Connecticut', '28', '1', '', '');
+INSERT INTO Contestants (lastname, firstname, hometown, age, season, languages, details) VALUES ('Smith', 'Kim', 'Baytown, Texas', '28', '1', '', '');
+INSERT INTO Contestants (lastname, firstname, hometown, age, season, languages, details) VALUES ('Kellner', 'Leslie', 'Baytown, Texas', '27', '1', '', '');
