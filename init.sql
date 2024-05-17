@@ -39,10 +39,10 @@ CREATE TABLE Countries (
 
 CREATE TABLE Contestants (
     ID int AUTO_INCREMENT,
-    lastname varchar(255),
-    firstname varchar(255),
-    hometown varchar(255),
+    fullname varchar(255),
     age int,
+    team_title varchar(255),
+    hometown varchar(255),
     season int NOT NULL,
     languages varchar(255),
     details varchar(255),
@@ -190,11 +190,35 @@ INSERT INTO Countries (country, continent) VALUES
     ('Peru','South America'),
     ('Uruguay','South America');
 
-# Season 1
-INSERT INTO Contestants (lastname, firstname, hometown, age, season, languages, details) VALUES ('Robar', 'Matt', 'Simsbury, Connecticut', '28', '1', '', '');
-INSERT INTO Contestants (lastname, firstname, hometown, age, season, languages, details) VALUES ('Robar', 'Ana', 'Simsbury, Connecticut', '28', '1', '', '');
-INSERT INTO Contestants (lastname, firstname, hometown, age, season, languages, details) VALUES ('Smith', 'Kim', 'Baytown, Texas', '28', '1', '', '');
-INSERT INTO Contestants (lastname, firstname, hometown, age, season, languages, details) VALUES ('Kellner', 'Leslie', 'Baytown, Texas', '27', '1', '', '');
+# Season 35
+INSERT INTO Contestants (fullname, age, team_title, hometown, season, languages, details) VALUES 
+    ('Alexandra Lichtor', '34', 'Siblings & Roommates', 'Chicago, Illinois', '35', '', ''),
+    ('Sheridan Lichtor', '29', 'Siblings & Roommates', 'Chicago, Illinois', '35', '', ''),
+    ('Elizabeth Rivera', '52', 'Mother & Daughter', 'Tampa, Florida', '35', '', ''),
+    ('Iliana Rivera', '27', 'Mother & Daughter', 'Tampa, Florida', '35', '', ''),
+    ('Jocelyn Chao', '49', 'Married Entrepreneurs', 'Albuquerque, New Mexico', '35', '', ''),
+    ('Victor Limary', '49', 'Married Entrepreneurs', 'Albuquerque, New Mexico', '35', '', ''),
+    ('Joe Moskowitz', '35', 'Engaged', 'New York City, New York', '35', '', ''),
+    ('Ian Todd', '40', 'Engaged', 'New York City, New York', '35', '', ''),
+    ('Liam Hykel', '23', 'Brothers', 'Cheyenne, Wyoming', '35', '', ''),
+    ('Yeremi Hykel', '24', 'Brothers', 'San Marcos, Texas', '35', '', ''),
+    ('Andrea Simpson', '44', 'College Friends', 'Philadelphia, Pennsylvania ', '35', '', ''),
+    ('Malaina Hatcher', '45', 'College Friends', 'Philadelphia, Pennsylvania', '35', '', ''),
+    ('Morgan Franklin', '31', 'Sisters', 'Brooklyn, New York', '35', '', ''),
+    ('Lena Franklin', '29', 'Sisters', 'Los Angeles, California', '35', '', ''),
+    ('Robbin Tomich', '41', 'Childhood Friends', 'Kirkland, Washington', '35', '', ''),
+    ('Chelsea Day', '41', 'Childhood Friends', 'Shoreline, Washington', '35', '', ''),
+    ('Todd Martin', '38', 'Married High School Sweethearts', 'Chino, California', '35', '', ''),
+    ('Ashlie Martin', '38', 'Married High School Sweethearts', 'Chino, California', '35', '', ''),
+    ('Steve Cargile', '54', 'Father & Daughter', 'Petty, Texas', '35', '', ''),
+    ('Anna Leigh Wilson', '28', 'Father & Daughter', 'Royse City, Texas', '35', '', ''),
+    ('Rob McArthur', '48', 'Father & Son', 'Riverside, California', '35', '', ''),
+    ('Corey McArthur', '25', 'Father & Son', 'New York City, New York', '35', '', ''),
+    ('Joel Strasser', '42', 'Best Friends', 'Kuna, Idaho', '35', '', ''),
+    ('Garrett Smith', '43', 'Best Friends', 'Meridian, Idaho', '35', '', ''),
+    ('Greg Franklin', '25', 'Brothers & Computer Scientists', 'New York City, New York', '35', '', ''),
+    ('John Franklin', '27', 'Brothers & Computer Scientists', 'Mountain View, California', '35', '', '')
+    ;
 
 INSERT INTO Episodes (ID, season, season_episode, episode_name, elimination) VALUES
     ('3501', '35', '1', 'The Amazing Race Is Back!', 1),
